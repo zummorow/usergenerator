@@ -1,0 +1,50 @@
+#userContainer{
+    display: flex;
+    flex-wrap:wrap;
+    margin: 20px;
+}
+.user-box{
+    width: 534px;
+    height: 477px;
+    display: flex;
+    background: #FFF9F9;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin : 20px;
+}
+
+.images{
+    width: 203px;
+    height: 203px;
+    
+}
+
+img{
+    width: 100%;
+}
+.name{
+    color: #000;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.email{
+    color: #948A8A;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.nation{
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

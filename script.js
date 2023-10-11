@@ -1,4 +1,3 @@
-// Ketika DOM telah sepenuhnya dimuat, jalankan kode berikutnya
 document.addEventListener('DOMContentLoaded', function () {
     // Mendapatkan referensi ke tombol "Ambil Data Pengguna" berdasarkan ID
     const fetchButton = document.getElementById('fetchButton');
@@ -10,15 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
         // Menggunakan metode "fetch" untuk membuat permintaan ke API Random User
         fetch('https://randomuser.me/api/')
             .then(response => {
-                // Memeriksa apakah permintaan berhasil (kode status 200)
-                if (!response.ok) {
-                    throw new Error('Terjadi kesalahan saat mengambil data.');
-                }
                 // Mengurai respons JSON dari API
                 return response.json();
             })
             .then(data => {
-                // Mengambil data pengguna pertama dari respons
+                // Mengambil data pengguna dari respons
                 const userData = data.results[0];
                 // Menyimpan atribut yang diperlukan dari data pengguna
                 const picture = userData.picture.large;
@@ -33,18 +28,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 userDiv.classList.add('user-box');
                 // Menyisipkan HTML ke dalam elemen div
                 userDiv.innerHTML = `
-                    <img src="${picture}" alt="${name}">
-                    <p>Name: ${name}</p>
-                    <p>Email: ${email}</p>
-                    <p>Country: ${country}</p>
-                    <p>City: ${city}</p>
+                    <div class="images"><img src="${picture}" alt="${name}"></div>
+                    <p class="name">${name}</p>
+                    <p class="email">${email}</p>
+                    <p class="nation">${country} | ${city}</p>
+                    
                 `;
-                // Menambahkan elemen div dengan data pengguna ke dalam kontainer pengguna
+                // Menambahkan elemen div dengan data pengguna
                 userContainer.appendChild(userDiv);
             })
-            .catch(error => {
-                // Menangani kesalahan jika ada, dan mencetak pesan kesalahan ke konsol
-                console.error('Terjadi kesalahan:', error);
-            });
     });
 });
